@@ -1,0 +1,13 @@
+package user;
+
+public class userController {
+
+	userService service;
+	
+	public static void init() {
+		
+		service();
+		
+	}
+	
+}

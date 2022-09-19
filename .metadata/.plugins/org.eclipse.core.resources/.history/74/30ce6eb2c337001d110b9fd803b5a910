@@ -1,0 +1,82 @@
+package user;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class userDAO {
+	
+	boolean inited;
+	
+	String url;
+	String user;
+	String pwd;
+
+	Connection con;
+	Statement st;
+	
+	public void init() throws SQLException, ClassNotFoundException {
+		
+		Class.forName("oracle.jdbc.driver.OracleDriber");
+		url="jdbc:oracle:thin:@localhost:1521:XE";
+		user="system";
+		pwd="7735";
+		
+		con =DriverManager.getConnection(url,user,pwd);
+		st= con.createStatement();
+		
+	}
+	
+	public void close() throws SQLException {
+		
+		st.close();
+		con.close();
+		
+		
+	}
+	
+	
+	public boolean join(userDTO user) throws SQLException, ClassNotFoundException {
+		
+		if(!inited) {
+			
+			init();
+		}
+		
+		String sql = "INSERT INTO m MEMBER (m.id,m.password) VALUES('"+user.getId()+"','"+user.getPassword()+"')";
+		
+		st.executeQuery(sql);
+	
+		return true;
+		
+		
+	}
+
+
+	public userDTO search(String id) throws ClassNotFoundException, SQLException {
+		
+			if(!inited) {
+				
+				init();
+			}
+			
+			String sql = "SELECT * FROM m MEMBER WHERE m.id="+id;
+			
+			ResultSet r=st.executeQuery(sql);
+			
+			userDTO temp=null;
+			
+			while(r.next()) {
+				
+				temp.setId(r.getString("id"));
+				temp.setPassword(r.getString("name"));
+			}
+			
+			
+			
+			return temp;
+	}
+
+}

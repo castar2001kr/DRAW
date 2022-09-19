@@ -1,0 +1,21 @@
+package user;
+
+public class userService {
+	
+	
+	userDAO dao;
+	
+	public init() {
+		
+		dao.init();
+		
+	}
+	
+	public userDTO search(String id) {
+		
+		
+		return dao
+	}
+	
+
+}

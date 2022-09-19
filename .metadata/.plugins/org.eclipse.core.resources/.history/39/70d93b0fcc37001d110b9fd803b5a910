@@ -1,0 +1,25 @@
+package user;
+
+import java.sql.SQLException;
+
+public class userService {
+	
+	
+	userDAO dao;
+	
+	public void init() {
+		
+		dao=new userDAO();
+		
+	}
+	
+	public userDTO search(String id) throws ClassNotFoundException, SQLException {
+		
+		
+		return dao.find(id);
+	}
+	
+	public userDTO search
+	
+
+}

@@ -1,0 +1,27 @@
+package user;
+
+public class userController {
+
+	userService service;
+	
+	public void init() {
+		
+		service=new userService();
+		
+	}
+	
+	public boolean join(userDTO input) {
+		
+		boolean result= service.join(input);
+		
+		return result;
+	
+	}
+	
+	public boolean login(userDTO input) {
+		
+		
+		
+	}
+	
+}

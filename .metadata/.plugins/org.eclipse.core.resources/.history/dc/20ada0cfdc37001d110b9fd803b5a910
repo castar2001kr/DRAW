@@ -1,0 +1,17 @@
+.nav1{
+    list-style: none;
+
+
+}
+
+ .nav1,.nav1 li{
+    float: right;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.m1{
+	margin-top:300px;
+	clear:both;
+}

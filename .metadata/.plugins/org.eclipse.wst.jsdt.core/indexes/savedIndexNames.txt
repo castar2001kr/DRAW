@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\keduit\Desktop\study\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+249269340.index
+1965190630.index
+1558338160.index
+1716662496.index
+2150865327.index
+579153714.index
+945869066.index

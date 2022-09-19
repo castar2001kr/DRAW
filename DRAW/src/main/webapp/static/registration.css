@@ -1,0 +1,38 @@
+.title{
+    color: black;
+    
+}
+
+.t_box{
+    
+    display: flex;
+    justify-content: center;
+
+ 
+    
+}
+
+form{
+    width: 400px;
+}
+
+#container{
+
+    margin-top: 100px;
+   
+
+    font-size: 20px;
+    font-style: italic;
+}
+
+.post_element{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+#submit{
+    display: flex;
+    justify-content: right;
+}

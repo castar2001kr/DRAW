@@ -1,0 +1,83 @@
+package user;
+
+import java.sql.SQLException;
+
+public class userService {
+	
+	userDAO dao;
+	
+//	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+//		
+//		userService s = new userService();
+//		
+//		s.init();
+//		
+//		userDTO u = new userDTO();
+//		u.setId("godaehyeon");
+//		u.setPassword("4321");
+//		
+//		System.out.println(s.login(u));
+//		
+//	}
+//	
+	
+	
+	
+	public void init() {
+		
+		dao=new userDAO();
+		
+	}
+	
+	public userDTO search(String id) throws ClassNotFoundException, SQLException {
+		
+		userDTO result= dao.find(id);
+		dao.close();
+		return result;
+	}
+	
+	public boolean join(userDTO user) throws SQLException {
+		
+		boolean result= dao.save(user);
+		dao.close();
+		return result;
+	}
+	
+	public boolean login(userDTO user) throws ClassNotFoundException, SQLException {
+		
+		
+		userDTO correct = dao.find(user.getId());
+		
+		try {
+			
+			
+			if(correct.getId()==null) {
+				return false;
+			}
+			
+			if(correct.getPassword().equals(user.getPassword())) {
+				
+				
+				
+			
+				
+				
+				
+				
+				
+				return true;
+			}else {
+				return false;
+			}
+			
+			
+		}catch(Exception e) {
+			return false;
+		}finally {
+			dao.close();
+		}
+		
+		
+	}
+
+}

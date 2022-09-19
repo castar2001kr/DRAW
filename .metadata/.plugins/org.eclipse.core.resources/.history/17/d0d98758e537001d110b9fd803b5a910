@@ -1,0 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+
+  String id= request.getParameter("id");
+  String pw= request.getParameter("password");
+   %>
+
+
+<%@ page import="user.userController" %>
+
+<jsp:useBean id="form" class="user.userDTO" scope="page"></jsp:useBean>
+<jsp:setProperty property="id" name="form" value=id/>
+<jsp:setProperty property="pw" name="form" value=pw/>
+
+
+<jsp:useBean id="account" class="user.userController" scope="session"/>
+<jsp:setProperty name="account" property= />
+
+
+<%
+	request.setCharacterEncoding("utf-8");
+	
+	
+	
+
+
+%>
+
+
+
+
+</body>
+</html>
